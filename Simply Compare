@@ -1,0 +1,6 @@
+echo on
+"C:\Users\asingh\Downloads\Utilities\ImageMagick-7.0.2-10-portable-Q16-x64\convert" %1 +level-colors blue, %~dpn1_b.png
+"C:\Users\asingh\Downloads\Utilities\ImageMagick-7.0.2-10-portable-Q16-x64\convert" %2 +level-colors blue, %~dpn2_b.png
+::"C:\Users\asingh\Downloads\Utilities\ImageMagick-7.0.2-10-portable-Q16-x64\compare" %1 %2 -compose difference %~dpn1_diff.png
+::"C:\Users\asingh\Downloads\Utilities\ImageMagick-7.0.2-10-portable-Q16-x64\convert" %~dpn1_diff.png -negate %~dpn1_diff_neg.png
+"C:\Users\asingh\Downloads\Utilities\ImageMagick-7.0.2-10-portable-Q16-x64\compare" %~dpn1_b.png %~dpn2_b.png -compose difference %~dpn1_diffb.png
